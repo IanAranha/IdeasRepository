@@ -1,0 +1,15 @@
+
+<h1>Hi @ViewBag.User.Alias</h1>
+        <form action="/addIdea" method="POST">
+            <input name = "IdeaData" placeholder = "Post something witty here..." />
+            <input type="submit" value="Idea!">
+        </form>
+
+@foreach (var x in ViewBag.ideas)
+{
+    <p><a href="/show/@x.Writer.UserId">@x.Writer.Alias</a> says :</p>
+    <p> @x.IdeaData</p>
+    <a href="/like/@x.IdeaId"> Like </a> <br>
+    <p><a href="">@x.Likers.Count liked this idea</a></p>
+}
+

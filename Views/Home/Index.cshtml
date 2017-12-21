@@ -1,0 +1,39 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model beltexam.Models.RegisterUserModel
+<h2>Register here</h2>
+<form asp-controller="Home" asp-action="Register" method="post">
+    
+    <label asp-for="Name"></label>
+    <input asp-for="Name"/>
+    <span asp-validation-for="Name"></span><br>
+    
+    <label asp-for="Alias"></label>
+    <input asp-for="Alias"/>
+    <span asp-validation-for="Alias"></span><br>
+
+    
+    <label asp-for="Email"></label>
+    <input asp-for="Email"/>
+    <span asp-validation-for="Email"></span>
+    <span>@TempData["Unique"]</span><br>
+   
+
+    <label asp-for="Password"></label>
+    <input asp-for="Password"/>
+    <span asp-validation-for="Password"></span><br>   
+    
+    <label asp-for="C_Password"></label>
+    <input asp-for="C_Password"/>
+    <span asp-validation-for="C_Password"></span><br>
+
+
+    <input type="submit" value="REGISTER">
+</form>
+
